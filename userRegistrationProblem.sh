@@ -1,10 +1,9 @@
 #!/bin/bash -x
-shopt -s extglob
-read char
-pattern="^[a-zA-Z0-9]+([.+_-]{1}[a-zA-Z0-9]{3,}){0,2}\@([a-zA-Z0-9]+\.[a-z]+){2,4}"
-if [[ $char =~ $pattern ]]
+read -p "Enter a mobile number : " number
+format="^[9][1][ ][0-9]{10}$"
+if [[ $number =~ $format ]]
 then
-        echo yes
+        echo valid number
 else
-        echo no
+        echo Invalid number
 fi
