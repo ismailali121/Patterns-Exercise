@@ -57,3 +57,21 @@ function emailValidation () {
 
 }
 emailValidation
+
+function validateMobileNumber () {
+        flag=0
+        format="^[9][1][ ][0-9]{10}$"
+        while [[ $flag -eq 0 ]]
+        do
+                read -p "Enter a mobile number : " number
+                if [[ $number =~ $format ]]
+                then
+                        echo valid number
+                        ((flag++))
+                        break
+                else
+                        echo Invalid number
+                fi
+        done
+}
+validateMobileNumber
