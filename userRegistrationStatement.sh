@@ -75,3 +75,27 @@ function validateMobileNumber () {
         done
 }
 validateMobileNumber
+
+function passwordValidation(){
+        flag=0
+        specialCharacter="^[A-Za-z0-9]*[@#$%&=*_-]{1}[A-Za-z0-9]*$"
+        while [[ $flag -eq 0 ]]
+        do
+                echo "Enter the password"
+                read  password
+                if [[ ${#password} -ge 8 ]]
+                then
+                        echo valid password
+                        ((flag++))
+                        break
+                else
+                        echo The password is INVALID. It must satisfy all the following conditions
+                        echo The password must be ATLEAST of 8 characters
+
+
+
+                fi
+        done
+}
+passwordValidation
+
