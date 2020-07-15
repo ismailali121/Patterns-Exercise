@@ -83,7 +83,7 @@ function passwordValidation(){
         do
                 echo "Enter the password"
                 read  password
-		if [[ ${#password} -ge 8 && "$password" =~ [[:upper:]]+ && "$password" =~ [[:digit:]] ]]
+		if [[ ${#password} -ge 8 && "$password" =~ [[:upper:]]+ && "$password" =~ [[:digit:]]+ && $password =~ $specialCharacter ]]
                 then
                         echo valid password
                         ((flag++))
@@ -93,7 +93,7 @@ function passwordValidation(){
                         echo The password must be ATLEAST of 8 characters
 			echo The password must contain ATLEAST one UPPERCASE character
 			echo The password must contain ATLEAST one NUMERIC character
-
+			echo The password must contain EXACTLY one SPECIAL CHARACTER character
                 fi
         done
 }
